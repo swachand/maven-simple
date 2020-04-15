@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage ('compile stage') { 
+        stage ('Compile stage') { 
             steps{ 
                 
                 withMaven(maven : 'MVN_3.6.0') { 
@@ -21,11 +21,11 @@ pipeline {
             }
 
         }
-        stage ('Deployment stage') {
+        stage ('Install stage') {
             steps{ 
                 
                 withMaven(maven : 'MVN_3.6.0') { 
-                    sh 'mvn deploy'
+                    sh 'mvn install'
                     }
                    
             }
