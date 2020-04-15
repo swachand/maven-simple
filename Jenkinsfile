@@ -31,6 +31,16 @@ pipeline {
             }
 
         }
+        stage ('Deployment stage') {
+            steps{ 
+                
+                withMaven(maven : 'MVN_3.6.0') { 
+                    sh 'mvn deploy'
+                    }
+                   
+            }
+
+        }
             
     }
 }
